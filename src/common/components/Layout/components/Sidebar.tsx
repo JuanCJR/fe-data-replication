@@ -1,4 +1,13 @@
-import { Flex, Drawer, DrawerContent, CloseButton, Box } from '@chakra-ui/react'
+import {
+  Flex,
+  Drawer,
+  DrawerContent,
+  CloseButton,
+  Box,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerOverlay
+} from '@chakra-ui/react'
 import styles from '../Layout.module.css'
 import { DefaulLayoutComponentInterface } from '../interfaces/index.interface'
 
@@ -31,27 +40,21 @@ export const SideBar = ({
         onOverlayClick={onClose}
         size='full'
       >
+        <DrawerOverlay />
         <DrawerContent>
-          <Box
-            bg={'white'}
-            transition='3s ease'
-            w={{ base: 'full', md: 60 }}
-            pos='fixed'
-            h='full'
-          >
-            <Flex
-              h='20'
-              alignItems='center'
-              mx='8'
-              justifyContent='space-between'
-            >
-              <CloseButton
-                display={{ base: 'flex', md: 'none' }}
-                onClick={onClose}
-              />
-            </Flex>
-            sidebar from drawer
-          </Box>
+          <DrawerBody>
+            <Box bg={'white'} w={{ base: 'full', md: 60 }} pos='fixed' h='full'>
+              <Flex
+                h='20'
+                alignItems='center'
+                mx='8'
+                justifyContent='space-between'
+              >
+                <DrawerCloseButton />
+              </Flex>
+              sidebar from drawer
+            </Box>
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
     </Flex>

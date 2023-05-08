@@ -1,8 +1,8 @@
-import React from 'react'
+import styles from './page.module.css'
 
-export default function IndexPage() {
+export default function Home() {
   return (
-    <div>
+    <main>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
       recusandae nihil dolore maxime alias, laboriosam fugiat eos repellendus.
       Quo voluptate quibusdam vero facilis corrupti non asperiores id modi
@@ -20,6 +20,6 @@ export default function IndexPage() {
       optio molestias reprehenderit molestiae cum aliquam labore neque sequi rem
       consequuntur animi necessitatibus voluptates ducimus dolores. Officiis
       libero amet ipsum quibusdam culpa sed hic.
-    </div>
+    </main>
   )
 }

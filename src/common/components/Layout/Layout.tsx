@@ -1,9 +1,9 @@
-import React from 'react'
-import { Sidebar } from '../Sidebar/Sidebar'
+'use client'
 import { Flex, useDisclosure } from '@chakra-ui/react'
 import { NavBarComponent } from './components/Navbar'
 import { SideBar } from './components/Sidebar'
 import { RightBar } from './components/Rightbar'
+import { Content } from './components/Content'
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -15,15 +15,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         {/* Sidebar */}
         <SideBar onClose={onClose} onOpen={onOpen} isOpen={isOpen} />
         {/* Content */}
-        <Flex
-          // bg={'blackAlpha.600'}
-          w='100%'
-          mt={4}
-          padding={'1rem'}
-          // className={styles.defaultBoxShadow}
-        >
-          {children}
-        </Flex>
+        <Content>{children}</Content>
         {/* RightBar */}
         <RightBar onClose={onClose} onOpen={onOpen} isOpen={isOpen} />
       </Flex>

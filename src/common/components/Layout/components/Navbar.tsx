@@ -1,3 +1,4 @@
+'use client'
 import { Box, Flex, Heading, IconButton } from '@chakra-ui/react'
 import styles from '../Layout.module.css'
 import { HamburgerIcon } from '@chakra-ui/icons'

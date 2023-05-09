@@ -1,4 +1,4 @@
-import { extendBaseTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
 const styles = {
@@ -6,7 +6,7 @@ const styles = {
     body: {
       fontFamily: 'body',
       color: mode('gray.800', 'whiteAlpha.900')(props),
-      bg: mode('gray.200', 'gray.800')(props),
+      bg: mode('rgba(132, 182, 244, 0.12)', 'gray.800')(props),
       lineHeight: 'base'
     },
     '*::placeholder': {
@@ -19,4 +19,4 @@ const styles = {
   })
 }
 
-export const theme = extendBaseTheme({ styles })
+export const theme = extendTheme({ styles })

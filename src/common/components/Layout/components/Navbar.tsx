@@ -1,44 +1,42 @@
 'use client'
-import { Box, Flex, Heading, IconButton } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Heading,
+  IconButton,
+  UseDisclosureProps
+} from '@chakra-ui/react'
 import styles from '../Layout.module.css'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
 import logo from '@assets/logo.png'
-import { DefaulLayoutComponentInterface } from '../interfaces/index.interface'
+import { ShadowBox } from '@components/Box/ShadowBox/ShadowBox'
+import { SideBarButton } from '@components/Buttons/index'
+import { GenericHeading } from '@/common/components/Heading'
+import { CustomUseDisclosureProps } from '@/common/types'
 
-interface NavBarComponentInterface extends DefaulLayoutComponentInterface {}
+interface NavBarComponentProps extends CustomUseDisclosureProps {}
 
 export const NavBarComponent = ({
   onOpen,
   onClose,
   isOpen
-}: NavBarComponentInterface) => {
+}: NavBarComponentProps) => {
   return (
-    <Flex
-      bg={'white'}
-      h='50px'
-      m={4}
-      mr={4}
-      mb={0}
-      alignItems={'center'}
-      className={styles.defaultBoxShadow}
-    >
+    <ShadowBox h='50px' m={4} mr={4} mb={0} alignItems={'center'}>
       {/* SideBar Button */}
-      <Box display={{ base: 'block', md: 'none' }} ml={4} mr={2}>
-        <IconButton
-          aria-label='Open menu'
-          icon={<HamburgerIcon />}
-          size='md'
-          variant='ghost'
-          onClick={isOpen ? onClose : onOpen}
-        />
-      </Box>
+      <SideBarButton onClose={onClose} onOpen={onOpen} isOpen={isOpen} />
       <Flex ml={{ base: '4', md: 'none' }} h={'100%'} alignItems={'center'}>
         <Image src={logo} alt='data replication logo' width={30} height={40} />
-        <Heading ml={1} fontSize={'md'} as={'h1'} fontWeight={'semibold'}>
+        <GenericHeading
+          ml={1}
+          fontSize={'md'}
+          as={'h1'}
+          fontWeight={'semibold'}
+        >
           Online Data Replication
-        </Heading>
+        </GenericHeading>
       </Flex>
-    </Flex>
+    </ShadowBox>
   )
 }

@@ -3,3 +3,26 @@
   border-radius: 8px;
   padding: 0.3rem;
 }
+
+.sidebarListContainer {
+  padding: 1rem;
+}
+
+.sidebarList {
+  display: flexbox;
+}
+.sidebarList div {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(28, 39, 61, 0.6);
+}
+
+.sidebarList div:hover {
+  background-color: #14438e;
+  color: white;
+}

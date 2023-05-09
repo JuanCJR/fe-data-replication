@@ -1,7 +1,7 @@
 'use client'
 import { Flex, useDisclosure } from '@chakra-ui/react'
 import { NavBarComponent } from './components/Navbar'
-import { SideBar } from './components/Sidebar'
+import { SideBar } from './components/Sidebar/Sidebar'
 import { RightBar } from './components/Rightbar'
 import { Content } from './components/Content'
 export const Layout = ({ children }: { children: React.ReactNode }) => {
